@@ -25,6 +25,7 @@ const SignInScreen = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<SignInType>();
 
@@ -33,6 +34,8 @@ const SignInScreen = () => {
       email: data.email,
       password: data.password,
     });
+
+    reset();
   };
 
   return (

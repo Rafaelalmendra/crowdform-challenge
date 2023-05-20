@@ -57,10 +57,12 @@ const useSignUp = () => {
         text1: "Success",
         text2: "Account created successfully 🎉",
         autoHide: true,
-        visibilityTime: 2000,
+        visibilityTime: 3000,
       });
 
-      navigate("Home");
+      setTimeout(() => {
+        navigate("SignIn");
+      }, 3000);
     } catch (error: any) {
       console.error(error);
 
