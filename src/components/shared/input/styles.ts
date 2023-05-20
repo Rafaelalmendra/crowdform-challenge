@@ -43,8 +43,8 @@ export const Label = styled.Text`
 
 export const IconWrapper = styled.TouchableOpacity`
   position: absolute;
-  height: 54px;
-  right: 15px;
+  bottom: 16px;
+  right: 10px;
   justify-content: center;
 `;
 
