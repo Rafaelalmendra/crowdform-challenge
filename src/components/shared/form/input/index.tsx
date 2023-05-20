@@ -46,7 +46,7 @@ const Input = ({
       />
 
       {isPasswordInput && (
-        <S.IconWrapper onPress={handleShowPassword}>
+        <S.IconWrapper onPress={handleShowPassword} isError={!!errorMessage}>
           {showPassword ? (
             <Eye color={theme.colors.gray} size={22} />
           ) : (

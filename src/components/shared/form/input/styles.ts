@@ -41,13 +41,14 @@ export const Label = styled.Text`
   margin-bottom: 5px;
 `;
 
-export const IconWrapper = styled.TouchableOpacity`
+export const IconWrapper = styled.TouchableOpacity<{ isError: boolean }>`
   position: absolute;
-  bottom: 16px;
+  bottom: ${({ isError }) => (isError ? "39px" : "16px")};
   right: 10px;
   justify-content: center;
 `;
 
 export const ErrorMessage = styled.Text`
   color: red;
+  margin-top: 4px;
 `;
