@@ -8,7 +8,7 @@ import { Button, Input, TextComponent } from "components";
 import * as S from "./styles";
 import { GlobalWrapper } from "styles";
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
   const { navigate } = useNavigation();
 
   return (
@@ -21,10 +21,12 @@ const SignInScreen = () => {
 
       <S.Container>
         <TextComponent fontSize={18} fontFamily="semiBold" marginBottom={34}>
-          Login
+          Create your account
         </TextComponent>
 
         <S.FormContainer>
+          <Input placeholder="Enter your first name" label="First Name" />
+          <Input placeholder="Enter your last name" label="Last Name" />
           <Input placeholder="Enter your email" label="E-mail" />
           <Input
             placeholder="Enter your password"
@@ -33,30 +35,26 @@ const SignInScreen = () => {
           />
         </S.FormContainer>
 
-        <Button>Login</Button>
+        <Button>Create account</Button>
 
         <S.SignUpContainer>
           <TextComponent fontSize={12} fontFamily="regular" color="gray">
-            Don’t have an account?
+            Already have an account?
           </TextComponent>
 
           <Button
             variant="link"
             textColor="gray"
-            width={56}
+            width={72}
             fontSize={12}
-            onPress={() => navigate("SignUp")}
+            onPress={() => navigate("SignIn")}
           >
-            Sign Up
+            Log in Here
           </Button>
-
-          <TextComponent fontSize={12} fontFamily="regular" color="gray">
-            here
-          </TextComponent>
         </S.SignUpContainer>
       </S.Container>
     </GlobalWrapper>
   );
 };
 
-export { SignInScreen };
+export { SignUpScreen };
