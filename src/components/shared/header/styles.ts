@@ -7,7 +7,7 @@ export const Wrapper = styled.View`
 
 export const HeaderContainer = styled.View`
   width: 100%;
-  padding: 18px;
+  padding: 15px 18px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

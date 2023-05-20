@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 // components
-import { Button, Header, Input, TextComponent } from "components";
+import { Button, CheckBox, Header, Input, TextComponent } from "components";
 
 // styles
 import * as S from "./styles";
@@ -10,6 +11,11 @@ import { GlobalWrapper } from "styles";
 
 const SignUpScreen = () => {
   const { navigate } = useNavigation();
+  const [checked, setChecked] = useState<boolean>(false);
+
+  const handleChangeTerms = () => {
+    setChecked(!checked);
+  };
 
   return (
     <GlobalWrapper>
@@ -36,6 +42,28 @@ const SignUpScreen = () => {
             label="Password"
           />
         </S.FormContainer>
+
+        <S.CheckBoxContainer>
+          <CheckBox value={checked} onChange={handleChangeTerms} />
+
+          <TextComponent
+            width="90%"
+            color="gray"
+            fontSize={12}
+            fontFamily="regular"
+          >
+            I am over 18 years of age and I have read and agree to the{" "}
+            <TextComponent fontSize={12} fontFamily="regular" color="black">
+              Terms of Service{" "}
+            </TextComponent>
+            <TextComponent fontSize={12} fontFamily="regular" color="gray">
+              And{" "}
+            </TextComponent>
+            <TextComponent fontSize={12} fontFamily="regular" color="black">
+              Terms of Service
+            </TextComponent>
+          </TextComponent>
+        </S.CheckBoxContainer>
 
         <Button>Create account</Button>
 

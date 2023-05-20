@@ -14,8 +14,16 @@ export const FormContainer = styled.View`
   margin-bottom: 37px;
 `;
 
+export const CheckBoxContainer = styled.View`
+  width: 100%;
+  gap: 10px;
+  flex-direction: row;
+  align-items: flex-start;
+
+  margin-bottom: 32px;
+`;
+
 export const SignInContainer = styled.View`
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;

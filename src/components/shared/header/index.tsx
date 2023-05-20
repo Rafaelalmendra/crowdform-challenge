@@ -12,7 +12,7 @@ import * as S from "./styles";
 import theme from "styles/theme";
 
 // icons
-import { ArrowLeft, CaretLeft } from "phosphor-react-native";
+import { ArrowLeft } from "phosphor-react-native";
 
 type HeaderProps = {
   screenTitle?: string;
