@@ -1,4 +1,8 @@
-import { TouchableOpacityProps, TextStyle } from "react-native";
+import {
+  TouchableOpacityProps,
+  TextStyle,
+  ActivityIndicator,
+} from "react-native";
 
 // components
 import { TextComponent } from "components/shared/text";
@@ -16,6 +20,7 @@ type ButtonProps = {
   textColor?: keyof typeof theme.colors;
   textStyle?: TextStyle;
   backgroundColor?: keyof typeof theme.colors;
+  isLoading?: boolean;
 } & TouchableOpacityProps;
 
 const Button = ({
@@ -27,16 +32,20 @@ const Button = ({
   textColor = "white",
   textStyle,
   backgroundColor,
+  isLoading,
   ...rest
 }: ButtonProps) => {
   return (
     <S.Wrapper
       {...rest}
       variant={variant}
+      disabled={isLoading}
       width={width}
       backgroundColor={backgroundColor}
     >
-      {children && (
+      {isLoading && <ActivityIndicator color={textColor} />}
+
+      {!isLoading && children && (
         <TextComponent
           fontSize={fontSize}
           {...textStyle}
