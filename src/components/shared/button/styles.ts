@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import theme from "styles/theme";
 
 type WrapperProps = {
-  variant?: "filled" | "outlined" | "link";
+  variant?: "filled" | "outlined" | "link" | "unstyled";
   width?: number;
   backgroundColor?: keyof typeof theme.colors;
 };
@@ -36,6 +36,11 @@ export const Wrapper = styled.TouchableOpacity<WrapperProps>`
         border: 1px solid ${
           backgroundColor ? theme.colors[backgroundColor] : theme.colors.purple
         };
+      `;
+    } else if (variant === "unstyled") {
+      return `
+        height: auto;
+        background-color: transparent;
       `;
     }
   }}

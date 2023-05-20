@@ -9,7 +9,7 @@ import theme from "styles/theme";
 
 type ButtonProps = {
   children?: React.ReactNode;
-  variant?: "filled" | "outlined" | "link";
+  variant?: "filled" | "outlined" | "link" | "unstyled";
   width?: number;
   fontSize?: number;
   fontWeight?: "regular" | "medium" | "bold" | "semiBold";
@@ -42,7 +42,9 @@ const Button = ({
           {...textStyle}
           color={textColor}
           fontFamily={fontWeight}
-          textDecorationLine={variant === "link" ? "underline" : "none"}
+          textDecorationLine={
+            variant !== "unstyled" && variant === "link" ? "underline" : "none"
+          }
         >
           {children}
         </TextComponent>
