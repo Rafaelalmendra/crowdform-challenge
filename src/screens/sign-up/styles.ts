@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   padding: 0 20px;
-  margin-top: 120px;
+  margin-top: 20px;
 `;
 
 export const FormContainer = styled.View`
@@ -14,7 +14,7 @@ export const FormContainer = styled.View`
   margin-bottom: 37px;
 `;
 
-export const SignUpContainer = styled.View`
+export const SignInContainer = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;

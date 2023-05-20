@@ -2,7 +2,7 @@ import { StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 // components
-import { Button, Input, TextComponent } from "components";
+import { Button, Header, Input, TextComponent } from "components";
 
 // styles
 import * as S from "./styles";
@@ -18,6 +18,8 @@ const SignInScreen = () => {
         barStyle="dark-content"
         backgroundColor="transparent"
       />
+
+      <Header />
 
       <S.Container>
         <TextComponent fontSize={18} fontFamily="semiBold" marginBottom={34}>

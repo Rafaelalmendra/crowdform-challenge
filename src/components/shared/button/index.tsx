@@ -1,7 +1,7 @@
 import { TouchableOpacityProps, TextStyle } from "react-native";
 
 // components
-import { TextComponent } from "components/shared/Text";
+import { TextComponent } from "components/shared/text";
 
 // styles
 import * as S from "./styles";
