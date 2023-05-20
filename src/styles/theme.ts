@@ -7,6 +7,7 @@ export default {
     white: "#FFFFFF",
     gray: "#A0A0A0",
     secondGray: "#F4F4F4",
+    tertiaryGray: "#CFCFCF",
   },
   fonts: {
     regular: "Sora_400Regular",
