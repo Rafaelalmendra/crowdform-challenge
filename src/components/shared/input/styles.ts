@@ -36,6 +36,11 @@ export const TextInput = styled.TextInput<TextInputProps>`
     `}
 `;
 
+export const Label = styled.Text`
+  color: ${theme.colors.gray};
+  margin-bottom: 5px;
+`;
+
 export const IconWrapper = styled.TouchableOpacity`
   position: absolute;
   height: 54px;

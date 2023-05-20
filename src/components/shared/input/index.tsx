@@ -9,11 +9,13 @@ import theme from "styles/theme";
 import { EyeSlash, Eye } from "phosphor-react-native";
 
 export type InputProps = {
+  label?: string;
   errorMessage?: string;
   isPasswordInput?: boolean;
 } & TextInputProps;
 
 const Input = ({
+  label,
   errorMessage,
   isPasswordInput = false,
   ...rest
@@ -31,6 +33,8 @@ const Input = ({
 
   return (
     <S.Wrapper>
+      {!!label && <S.Label>{label}</S.Label>}
+
       <S.TextInput
         hasError={!!errorMessage}
         isFocused={isFocused}

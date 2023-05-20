@@ -22,8 +22,12 @@ const SignInScreen = () => {
         </TextComponent>
 
         <S.FormContainer>
-          <Input placeholder="Enter your email" />
-          <Input placeholder="Minimum 8 characters" isPasswordInput />
+          <Input placeholder="Enter your email" label="E-mail" />
+          <Input
+            placeholder="Minimum 8 characters"
+            isPasswordInput
+            label="Password"
+          />
         </S.FormContainer>
 
         <Button>Login</Button>
