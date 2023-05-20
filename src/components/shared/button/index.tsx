@@ -14,6 +14,7 @@ type ButtonProps = {
   textColor?: keyof typeof theme.colors;
   textStyle?: TextStyle;
   backgroundColor?: keyof typeof theme.colors;
+  variant?: "filled" | "outlined" | "link";
 } & TouchableOpacityProps;
 
 const Button = ({
@@ -23,10 +24,11 @@ const Button = ({
   textColor = "white",
   textStyle,
   backgroundColor,
+  variant = "filled",
   ...rest
 }: ButtonProps) => {
   return (
-    <S.Wrapper {...rest} backgroundColor={backgroundColor}>
+    <S.Wrapper {...rest} backgroundColor={backgroundColor} variant={variant}>
       {children && (
         <TextComponent
           fontSize={fontSize}
