@@ -32,14 +32,19 @@ const SignInScreen = () => {
 
         <Button>Login</Button>
 
-        <TextComponent
-          fontSize={12}
-          fontFamily="regular"
-          marginTop={13}
-          color="gray"
-        >
-          Don’t have an account? Sign up here
-        </TextComponent>
+        <S.SignUpContainer>
+          <TextComponent fontSize={12} fontFamily="regular" color="gray">
+            Don’t have an account?
+          </TextComponent>
+
+          <Button variant="link" textColor="gray" width={56} fontSize={12}>
+            Sign Up
+          </Button>
+
+          <TextComponent fontSize={12} fontFamily="regular" color="gray">
+            here
+          </TextComponent>
+        </S.SignUpContainer>
       </S.Container>
     </GlobalWrapper>
   );

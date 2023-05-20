@@ -9,32 +9,40 @@ import theme from "styles/theme";
 
 type ButtonProps = {
   children?: React.ReactNode;
+  variant?: "filled" | "outlined" | "link";
+  width?: number;
   fontSize?: number;
   fontWeight?: "regular" | "medium" | "bold" | "semiBold";
   textColor?: keyof typeof theme.colors;
   textStyle?: TextStyle;
   backgroundColor?: keyof typeof theme.colors;
-  variant?: "filled" | "outlined" | "link";
 } & TouchableOpacityProps;
 
 const Button = ({
   children,
+  variant = "filled",
+  width,
   fontSize = 16,
   fontWeight = "regular",
   textColor = "white",
   textStyle,
   backgroundColor,
-  variant = "filled",
   ...rest
 }: ButtonProps) => {
   return (
-    <S.Wrapper {...rest} backgroundColor={backgroundColor} variant={variant}>
+    <S.Wrapper
+      {...rest}
+      variant={variant}
+      width={width}
+      backgroundColor={backgroundColor}
+    >
       {children && (
         <TextComponent
           fontSize={fontSize}
           {...textStyle}
           color={textColor}
           fontFamily={fontWeight}
+          textDecorationLine={variant === "link" ? "underline" : "none"}
         >
           {children}
         </TextComponent>

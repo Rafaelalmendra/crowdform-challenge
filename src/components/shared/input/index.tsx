@@ -48,9 +48,9 @@ const Input = ({
       {isPasswordInput && (
         <S.IconWrapper onPress={handleShowPassword}>
           {showPassword ? (
-            <Eye color={theme.colors.gray} />
+            <Eye color={theme.colors.gray} size={22} />
           ) : (
-            <EyeSlash color={theme.colors.gray} />
+            <EyeSlash color={theme.colors.gray} size={22} />
           )}
         </S.IconWrapper>
       )}

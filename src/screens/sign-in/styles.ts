@@ -13,3 +13,11 @@ export const FormContainer = styled.View`
   gap: 20px;
   margin-bottom: 37px;
 `;
+
+export const SignUpContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+`;

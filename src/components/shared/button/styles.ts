@@ -2,8 +2,9 @@ import styled from "styled-components/native";
 import theme from "styles/theme";
 
 type WrapperProps = {
-  backgroundColor?: keyof typeof theme.colors;
   variant?: "filled" | "outlined" | "link";
+  width?: number;
+  backgroundColor?: keyof typeof theme.colors;
 };
 
 export const Wrapper = styled.TouchableOpacity<WrapperProps>`
@@ -13,7 +14,7 @@ export const Wrapper = styled.TouchableOpacity<WrapperProps>`
   border-radius: 4px;
   gap: 16px;
 
-  width: 100%;
+  width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: 58px;
 
   ${({ variant, backgroundColor }) => {
