@@ -12,7 +12,7 @@ import * as S from "./styles";
 import theme from "styles/theme";
 
 // icons
-import { CaretLeft } from "phosphor-react-native";
+import { ArrowLeft, CaretLeft } from "phosphor-react-native";
 
 type HeaderProps = {
   screenTitle?: string;
@@ -35,7 +35,7 @@ const Header = ({
           <TouchableOpacity
             onPress={handleBackButton ? handleBackButton : goBack}
           >
-            <CaretLeft color={theme.colors.black} />
+            <ArrowLeft color={theme.colors.black} weight="bold" />
           </TouchableOpacity>
         )}
 
