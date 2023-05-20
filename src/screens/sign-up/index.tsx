@@ -1,20 +1,60 @@
 import { useState } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useForm } from "react-hook-form";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
+
+// hooks
+import { useSignUp } from "hooks";
 
 // components
-import { Button, CheckBox, Header, Input, TextComponent } from "components";
+import {
+  Button,
+  CheckBox,
+  ControlledInput,
+  Header,
+  TextComponent,
+} from "components";
 
 // styles
 import * as S from "./styles";
 import { GlobalWrapper } from "styles";
 
+type SignUpType = {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+};
+
 const SignUpScreen = () => {
   const { navigate } = useNavigation();
+  const { handleSignUp, loadingSignUp } = useSignUp();
+
   const [checked, setChecked] = useState<boolean>(false);
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<SignUpType>();
 
   const handleChangeTerms = () => {
     setChecked(!checked);
+  };
+
+  const onSubmit = async (data: SignUpType) => {
+    if (!checked) {
+      Alert.alert("You must accept the terms of service to continue");
+      return;
+    }
+
+    await handleSignUp({
+      email: data.email,
+      password: data.password,
+      firstName: data.firstName,
+      lastName: data.lastName,
+    });
   };
 
   return (
@@ -27,19 +67,81 @@ const SignUpScreen = () => {
 
       <Header hasBackButton />
 
+      <Toast position="top" />
+
       <S.Container>
         <TextComponent fontSize={18} fontFamily="semiBold" marginBottom={34}>
           Create your account
         </TextComponent>
 
         <S.FormContainer>
-          <Input placeholder="Enter your first name" label="First Name" />
-          <Input placeholder="Enter your last name" label="Last Name" />
-          <Input placeholder="Enter your email" label="E-mail" />
-          <Input
-            placeholder="Enter your password"
+          <ControlledInput
+            name="firstName"
+            control={control}
+            label="First Name"
+            placeholder="Enter your first name"
+            errorMessage={errors.firstName?.message}
+            rules={{
+              required: {
+                message: "Required field",
+                value: true,
+              },
+              minLength: {
+                message: "Minimum 2 characters",
+                value: 2,
+              },
+            }}
+          />
+
+          <ControlledInput
+            name="lastName"
+            control={control}
+            label="Last Name"
+            placeholder="Enter your last name"
+            errorMessage={errors.lastName?.message}
             isPasswordInput
+            rules={{
+              required: {
+                message: "Required field",
+                value: true,
+              },
+            }}
+          />
+
+          <ControlledInput
+            name="email"
+            control={control}
+            label="E-mail"
+            placeholder="Enter your e-mail"
+            errorMessage={errors.email?.message}
+            rules={{
+              required: {
+                message: "Required field",
+                value: true,
+              },
+              pattern: {
+                message: "Enter a valid email",
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              },
+            }}
+          />
+
+          <ControlledInput
+            name="password"
+            control={control}
             label="Password"
+            placeholder="Enter your password"
+            errorMessage={errors.password?.message}
+            rules={{
+              required: {
+                message: "Required field",
+                value: true,
+              },
+              minLength: {
+                message: "Minimum 8 characters",
+                value: 8,
+              },
+            }}
           />
         </S.FormContainer>
 
@@ -65,7 +167,9 @@ const SignUpScreen = () => {
           </TextComponent>
         </S.CheckBoxContainer>
 
-        <Button>Create account</Button>
+        <Button onPress={handleSubmit(onSubmit)} isLoading={loadingSignUp}>
+          Create account
+        </Button>
 
         <S.SignInContainer>
           <TextComponent fontSize={12} fontFamily="regular" color="gray">
