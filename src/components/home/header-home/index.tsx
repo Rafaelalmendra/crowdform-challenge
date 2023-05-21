@@ -2,7 +2,7 @@
 import { statusBarHeight } from "utils";
 
 // components
-import { UserMenu, AccountFunds, NotificationMenu } from "components/home";
+import { UserMenu, AccountFunds, NotificationMenu } from "../menus";
 
 // styles
 import * as S from "./styles";

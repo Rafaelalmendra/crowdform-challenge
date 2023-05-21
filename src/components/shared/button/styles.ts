@@ -4,6 +4,7 @@ import theme from "styles/theme";
 type WrapperProps = {
   variant?: "filled" | "outlined" | "link" | "unstyled";
   width?: number;
+  height?: number;
   backgroundColor?: keyof typeof theme.colors;
 };
 
@@ -12,10 +13,10 @@ export const Wrapper = styled.TouchableOpacity<WrapperProps>`
   justify-content: center;
   flex-direction: row;
   border-radius: 4px;
-  gap: 16px;
+  gap: 4px;
 
   width: ${({ width }) => (width ? `${width}px` : "100%")};
-  height: 58px;
+  height: ${({ height }) => (height ? `${height}px` : "58px")};
 
   ${({ variant, backgroundColor }) => {
     if (variant === "link") {

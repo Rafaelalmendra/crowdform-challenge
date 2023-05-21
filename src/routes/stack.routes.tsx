@@ -8,10 +8,10 @@ const { Navigator, Screen } = createStackNavigator();
 
 export const StackRoutes = () => {
   return (
-    <Navigator screenOptions={{ headerShown: false }}>
+    <Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Screen name="Home" component={HomeScreen} />
       <Screen name="SignIn" component={SignInScreen} />
       <Screen name="SignUp" component={SignUpScreen} />
-      <Screen name="Home" component={HomeScreen} />
     </Navigator>
   );
 };

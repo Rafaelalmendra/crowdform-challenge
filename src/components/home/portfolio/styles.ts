@@ -1,12 +1,7 @@
 import styled from "styled-components/native";
 import theme from "styles/theme";
 
-export const Container = styled.ScrollView`
-  width: 100%;
-  flex: 1;
-`;
-
-export const PortfolioContainer = styled.View`
+export const Container = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
@@ -16,7 +11,7 @@ export const PortfolioContainer = styled.View`
   border-bottom-color: ${theme.colors.secondGray};
 `;
 
-export const PortfolioLeftContent = styled.View`
+export const LeftContent = styled.View`
   flex-direction: row;
   align-items: flex-end;
   gap: 4px;

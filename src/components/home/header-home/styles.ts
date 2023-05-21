@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import theme from "styles/theme";
 
 export const Wrapper = styled.View`
   width: 100%;
@@ -7,11 +6,8 @@ export const Wrapper = styled.View`
 
 export const HeaderContainer = styled.View`
   width: 100%;
-  padding: 15px 18px;
+  padding: 15px 18px 16px 18px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  border-bottom-width: 1px;
-  border-bottom-color: ${theme.colors.secondGray};
 `;
