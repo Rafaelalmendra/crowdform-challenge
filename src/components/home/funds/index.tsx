@@ -1,3 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+
+// types
+import { FundType } from "types";
+
+// mocks
+import { fundsMock } from "mocks";
+
 // components
 import { FundCard } from "./fund-card";
 import { TextComponent } from "components/shared";
@@ -5,11 +13,13 @@ import { TextComponent } from "components/shared";
 // styles
 import * as S from "./styles";
 
-// icons
-
-import { fundsMock } from "mocks";
-
 const Funds = () => {
+  const { navigate } = useNavigation();
+
+  const handleNavigateToAsset = (fund: FundType) => {
+    navigate("Asset", { fund });
+  };
+
   return (
     <S.Container>
       <TextComponent fontSize={18} fontWeight="bold" marginBottom={20}>
@@ -25,6 +35,15 @@ const Funds = () => {
             dataChart={fund.dataChart}
             valueFund={fund.valueFund}
             percentageFund={fund.percentageFund}
+            onPress={() =>
+              handleNavigateToAsset({
+                id: fund.id,
+                title: fund.title,
+                dataChart: fund.dataChart,
+                valueFund: fund.valueFund,
+                percentageFund: fund.percentageFund,
+              })
+            }
           />
         ))}
       </S.FundsList>

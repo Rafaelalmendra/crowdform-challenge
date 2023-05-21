@@ -1,3 +1,4 @@
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -16,6 +17,7 @@ import { ArrowLeft } from "phosphor-react-native";
 
 type HeaderProps = {
   screenTitle?: string;
+  screenSubtitle?: string;
   hasBackButton?: boolean;
   hasSignInButton?: boolean;
   handleBackButton?: () => void;
@@ -23,6 +25,7 @@ type HeaderProps = {
 
 const Header = ({
   screenTitle,
+  screenSubtitle,
   hasBackButton = false,
   handleBackButton,
 }: HeaderProps) => {
@@ -40,10 +43,25 @@ const Header = ({
         )}
 
         {!!screenTitle && (
-          <TextComponent color="black" fontFamily="semiBold" fontSize={14}>
-            {screenTitle}
-          </TextComponent>
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <TextComponent color="black" fontFamily="semiBold" fontSize={16}>
+              {screenTitle}
+            </TextComponent>
+
+            {screenSubtitle && (
+              <TextComponent color="gray" fontFamily="regular" fontSize={12}>
+                {screenSubtitle}
+              </TextComponent>
+            )}
+          </View>
         )}
+
+        <View style={{ width: 20 }} />
       </S.HeaderContainer>
     </S.Wrapper>
   );

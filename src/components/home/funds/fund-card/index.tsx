@@ -20,6 +20,7 @@ type FundCardProps = {
   dataChart: number[];
   valueFund: number;
   percentageFund: number;
+  onPress: () => void;
 };
 
 const FundCard = ({
@@ -28,6 +29,7 @@ const FundCard = ({
   dataChart,
   valueFund,
   percentageFund,
+  onPress,
 }: FundCardProps) => {
   const isFocused = useIsFocused();
 
@@ -46,7 +48,7 @@ const FundCard = ({
   }, [isFocused]);
 
   return (
-    <S.Container>
+    <S.Container onPress={onPress}>
       {icon}
 
       <TextComponent fontSize={12} fontWeight="bold" marginTop={5}>

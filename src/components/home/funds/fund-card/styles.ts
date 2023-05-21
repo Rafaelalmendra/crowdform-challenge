@@ -16,4 +16,5 @@ export const FundsContainer = styled.View`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 14px;
 `;

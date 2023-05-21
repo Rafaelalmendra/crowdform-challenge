@@ -2,7 +2,7 @@ import { Leaf, Sun, Wind } from "phosphor-react-native";
 
 const fundsMock = [
   {
-    id: 1,
+    id: "1",
     icon: <Wind size={16} weight="bold" color="#4A88D0" />,
     title: "Wind Fund",
     dataChart: [
@@ -17,7 +17,7 @@ const fundsMock = [
     percentageFund: 3.51,
   },
   {
-    id: 2,
+    id: "2",
     icon: <Sun size={16} weight="bold" color="#F0A719" />,
     title: "Solar Fund",
     dataChart: [
@@ -32,7 +32,7 @@ const fundsMock = [
     percentageFund: 0.13,
   },
   {
-    id: 3,
+    id: "3",
     icon: <Leaf size={16} weight="bold" color="#0FDF8F" />,
     title: "Nature Fund",
     dataChart: [

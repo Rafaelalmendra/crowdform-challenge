@@ -18,7 +18,6 @@ import {
 // styles
 import * as S from "./styles";
 import { GlobalWrapper } from "styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const HomeScreen = () => {
   const { navigate } = useNavigation();
