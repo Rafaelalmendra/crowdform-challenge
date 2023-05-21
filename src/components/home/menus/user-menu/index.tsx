@@ -7,7 +7,7 @@ import { getUser, setEmail, setName } from "stores/slices";
 import { useDispatch, useSelector } from "stores";
 
 // components
-import { Button, TextComponent } from "components";
+import { Button, TextComponent } from "components/shared";
 
 // styles
 import * as S from "./styles";
@@ -53,13 +53,13 @@ const UserMenu = () => {
           <Button
             variant="outlined"
             textColor="purple"
-            fontSize={14}
+            fontSize={12}
             style={{
               height: 42,
             }}
             onPress={handleLogout}
           >
-            Sair
+            Logout
           </Button>
         </S.UserMenuOpen>
 

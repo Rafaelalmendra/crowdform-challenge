@@ -5,7 +5,7 @@ import {
 } from "react-native";
 
 // components
-import { TextComponent } from "components/shared/text";
+import { TextComponent } from "components/shared";
 
 // styles
 import * as S from "./styles";

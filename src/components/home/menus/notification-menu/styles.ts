@@ -1,34 +1,21 @@
 import styled from "styled-components/native";
 import theme from "styles/theme";
 
-export const Container = styled.View`
-  position: relative;
-  z-index: 9999;
-`;
-
-export const UserContainer = styled.TouchableOpacity`
-  width: 32px;
-  height: 32px;
-
+export const NotificationContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
-  border-radius: 200px;
-
-  background: ${theme.colors.secondGray};
 `;
 
-export const UserMenuOpen = styled.View`
+export const NotificationMenuOpen = styled.View`
   position: absolute;
   top: 40px;
-  left: 18px;
-
-  elevation: 5;
-
+  right: 18px;
   z-index: 1;
+  elevation: 5;
 
   padding: 14px;
 
-  background-color: ${theme.colors.secondGray};
+  background-color: ${theme.colors.white};
   border-radius: 8px;
 `;
 

@@ -2,13 +2,10 @@
 import { statusBarHeight } from "utils";
 
 // components
-import { UserMenu, TextComponent } from "components";
+import { UserMenu, AccountFunds, NotificationMenu } from "components/home";
 
 // styles
 import * as S from "./styles";
-
-// icons
-import { Bell } from "phosphor-react-native";
 
 const HeaderHome = () => {
   return (
@@ -16,9 +13,9 @@ const HeaderHome = () => {
       <S.HeaderContainer>
         <UserMenu />
 
-        <TextComponent>Account: $1,457.23</TextComponent>
+        <AccountFunds />
 
-        <Bell />
+        <NotificationMenu />
       </S.HeaderContainer>
     </S.Wrapper>
   );

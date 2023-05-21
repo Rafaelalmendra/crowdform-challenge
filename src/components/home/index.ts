@@ -1,2 +1,2 @@
 export * from "./header-home";
-export * from "./user-menu";
+export * from "./menus";
