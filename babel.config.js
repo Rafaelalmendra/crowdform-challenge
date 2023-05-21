@@ -14,7 +14,7 @@ module.exports = function (api) {
             utils: "./src/utils",
             styles: "./src/styles",
             assets: "./src/assets",
-            images: "./src/images",
+            stores: "./src/stores",
           },
           extensions: [
             ".ios.ts",

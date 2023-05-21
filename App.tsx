@@ -1,8 +1,12 @@
 import { Text, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
+import { Provider as ReduxProvider } from "react-redux";
 
 // routes
 import { Routes } from "routes";
+
+// store
+import { store } from "stores";
 
 // fonts
 import {
@@ -30,17 +34,19 @@ export default function App() {
       {!isLoaded ? (
         <Text>Loading...</Text>
       ) : (
-        <ThemeProvider theme={theme}>
-          <StatusBar
-            translucent
-            barStyle="light-content"
-            backgroundColor="transparent"
-          />
+        <ReduxProvider store={store}>
+          <ThemeProvider theme={theme}>
+            <StatusBar
+              translucent
+              barStyle="light-content"
+              backgroundColor="transparent"
+            />
 
-          <GlobalWrapper>
-            <Routes />
-          </GlobalWrapper>
-        </ThemeProvider>
+            <GlobalWrapper>
+              <Routes />
+            </GlobalWrapper>
+          </ThemeProvider>
+        </ReduxProvider>
       )}
     </>
   );

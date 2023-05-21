@@ -1,5 +1,9 @@
 import { StatusBar } from "react-native";
 
+// stores
+import { useSelector } from "stores";
+import { getUser } from "stores/slices";
+
 // components
 import { Header, TextComponent } from "components";
 
@@ -8,6 +12,13 @@ import * as S from "./styles";
 import { GlobalWrapper } from "styles";
 
 const HomeScreen = () => {
+  const { email, name } = useSelector(getUser);
+
+  console.log("infos", {
+    email,
+    name,
+  });
+
   return (
     <GlobalWrapper>
       <StatusBar
