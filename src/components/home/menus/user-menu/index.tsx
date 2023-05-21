@@ -38,7 +38,9 @@ const UserMenu = () => {
   return (
     <>
       <S.UserContainer onPress={handlePopover}>
-        <User color={theme.colors.black} />
+        <User
+          color={popoverVisible ? theme.colors.purple : theme.colors.black}
+        />
       </S.UserContainer>
 
       <Modal transparent visible={popoverVisible}>

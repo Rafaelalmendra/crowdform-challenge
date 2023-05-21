@@ -2,8 +2,11 @@ import styled from "styled-components/native";
 import theme from "styles/theme";
 
 export const AccountsFundsContainer = styled.TouchableOpacity`
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  gap: 6px;
 `;
 
 export const AccountsFundsOpen = styled.View`

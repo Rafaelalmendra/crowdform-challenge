@@ -99,7 +99,6 @@ const SignUpScreen = () => {
             label="Last Name"
             placeholder="Enter your last name"
             errorMessage={errors.lastName?.message}
-            isPasswordInput
             rules={{
               required: {
                 message: "Required field",
@@ -132,6 +131,7 @@ const SignUpScreen = () => {
             label="Password"
             placeholder="Enter your password"
             errorMessage={errors.password?.message}
+            isPasswordInput
             rules={{
               required: {
                 message: "Required field",

@@ -26,5 +26,5 @@ export const SignInContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 13px;
+  margin: 13px 0;
 `;

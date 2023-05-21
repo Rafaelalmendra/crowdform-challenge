@@ -21,7 +21,9 @@ const NotificationMenu = () => {
   return (
     <>
       <S.NotificationContainer onPress={handlePopover}>
-        <Bell color={theme.colors.black} />
+        <Bell
+          color={popoverVisible ? theme.colors.purple : theme.colors.black}
+        />
       </S.NotificationContainer>
 
       <Modal transparent visible={popoverVisible}>
