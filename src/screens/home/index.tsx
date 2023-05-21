@@ -7,11 +7,18 @@ import { useSelector } from "stores";
 import { getUser } from "stores/slices";
 
 // components
-import { Funds, HeaderHome, Portfolio } from "components";
+import {
+  Funds,
+  HeaderHome,
+  LearnMoreCredits,
+  Portfolio,
+  WhyShouldYouInvest,
+} from "components";
 
 // styles
 import * as S from "./styles";
 import { GlobalWrapper } from "styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const HomeScreen = () => {
   const { navigate } = useNavigation();
@@ -37,6 +44,10 @@ const HomeScreen = () => {
         <Portfolio />
 
         <Funds />
+
+        <LearnMoreCredits />
+
+        <WhyShouldYouInvest />
       </S.Container>
     </GlobalWrapper>
   );
