@@ -1,24 +1,13 @@
 import { StatusBar } from "react-native";
 
-// stores
-import { useSelector } from "stores";
-import { getUser } from "stores/slices";
-
 // components
-import { Header, TextComponent } from "components";
+import { HeaderHome, TextComponent } from "components";
 
 // styles
 import * as S from "./styles";
 import { GlobalWrapper } from "styles";
 
 const HomeScreen = () => {
-  const { email, name } = useSelector(getUser);
-
-  console.log("infos", {
-    email,
-    name,
-  });
-
   return (
     <GlobalWrapper>
       <StatusBar
@@ -27,7 +16,7 @@ const HomeScreen = () => {
         backgroundColor="transparent"
       />
 
-      <Header />
+      <HeaderHome />
 
       <S.Container>
         <TextComponent fontSize={18} fontFamily="semiBold" marginBottom={34}>
