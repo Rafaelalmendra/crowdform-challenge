@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { View } from "react-native";
+import { useIsFocused } from "@react-navigation/native";
+import { useCountUp } from "use-count-up";
 
 // components
 import { Button, TextComponent } from "components/shared";
@@ -11,6 +14,22 @@ import theme from "styles/theme";
 import { ArrowUpRight, Coin } from "phosphor-react-native";
 
 const Portfolio = () => {
+  const isFocused = useIsFocused();
+
+  const { value, reset } = useCountUp({
+    isCounting: isFocused,
+    start: 0,
+    end: 1234.56,
+    duration: 2.4,
+    decimalPlaces: 2,
+    decimalSeparator: ".",
+    thousandsSeparator: ",",
+  });
+
+  useEffect(() => {
+    reset();
+  }, [isFocused]);
+
   return (
     <>
       <TextComponent fontSize={12} marginBottom={5} paddingLeft={20}>
@@ -20,7 +39,7 @@ const Portfolio = () => {
       <S.Container>
         <S.LeftContent>
           <TextComponent fontSize={24} fontWeight="bold">
-            $1,245.23
+            ${value}
           </TextComponent>
 
           <View
