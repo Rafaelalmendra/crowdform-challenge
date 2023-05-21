@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // screens
@@ -27,21 +28,17 @@ const BottomTabRoutes = () => {
       screenOptions={{
         headerShown: false,
         tabBarActiveBackgroundColor: theme.colors.white,
-        tabBarShowLabel: false,
         tabBarActiveTintColor: theme.colors.purple,
         tabBarHideOnKeyboard: true,
-        tabBarBadgeStyle: {
-          top: 15,
-          backgroundColor: theme.colors.purple,
-          color: "#6D6D6D",
-          fontSize: 10,
-          fontFamily: theme.fonts.bold,
-        },
         tabBarStyle: {
-          height: 63.36,
+          height: 68,
+          paddingTop: 14,
           backgroundColor: theme.colors.white,
-          paddingHorizontal: 10,
           borderTopColor: "#F3F3F3",
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: 12,
         },
       }}
     >
@@ -51,7 +48,7 @@ const BottomTabRoutes = () => {
         options={{
           tabBarIcon: (props) => (
             <House
-              size={24}
+              size={22}
               color={props.color}
               weight={screenWeight(props.color)}
             />
@@ -65,7 +62,7 @@ const BottomTabRoutes = () => {
         options={{
           tabBarIcon: (props) => (
             <ArrowsLeftRight
-              size={24}
+              size={22}
               color={props.color}
               weight={screenWeight(props.color)}
             />
@@ -79,7 +76,7 @@ const BottomTabRoutes = () => {
         options={{
           tabBarIcon: (props) => (
             <ChartPieSlice
-              size={24}
+              size={22}
               color={props.color}
               weight={screenWeight(props.color)}
             />
