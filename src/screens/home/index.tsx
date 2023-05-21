@@ -7,7 +7,7 @@ import { useSelector } from "stores";
 import { getUser } from "stores/slices";
 
 // components
-import { HeaderHome, Portfolio } from "components";
+import { Funds, HeaderHome, Portfolio } from "components";
 
 // styles
 import * as S from "./styles";
@@ -35,6 +35,8 @@ const HomeScreen = () => {
 
       <S.Container>
         <Portfolio />
+
+        <Funds />
       </S.Container>
     </GlobalWrapper>
   );

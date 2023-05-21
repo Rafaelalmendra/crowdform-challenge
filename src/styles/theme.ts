@@ -3,6 +3,7 @@ export default {
     purple: "#770FDF",
     lightPurple: "#F7EFFF",
     green: "#0FDF8F",
+    red: "#EE8688",
     black: "#000000",
     white: "#FFFFFF",
     gray: "#A0A0A0",
