@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // screens
-import { AssetScreen, HomeScreen } from "screens";
+import { AssetScreen, HomeScreen, PortfolioScreen } from "screens";
 
 // mocks
 import { fundsMock } from "mocks";
@@ -75,7 +75,7 @@ const BottomTabRoutes = () => {
 
       <Screen
         name="Portfolio"
-        component={HomeScreen}
+        component={PortfolioScreen}
         options={{
           tabBarIcon: (props) => (
             <ChartPieSlice

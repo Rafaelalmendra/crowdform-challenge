@@ -9,6 +9,7 @@ declare global {
       Asset: {
         fund: FundType;
       };
+      Portfolio: undefined;
     }
   }
 }
