@@ -35,15 +35,7 @@ const Funds = () => {
             dataChart={fund.dataChart}
             valueFund={fund.valueFund}
             percentageFund={fund.percentageFund}
-            onPress={() =>
-              handleNavigateToAsset({
-                id: fund.id,
-                title: fund.title,
-                dataChart: fund.dataChart,
-                valueFund: fund.valueFund,
-                percentageFund: fund.percentageFund,
-              })
-            }
+            onPress={() => handleNavigateToAsset(fund)}
           />
         ))}
       </S.FundsList>
