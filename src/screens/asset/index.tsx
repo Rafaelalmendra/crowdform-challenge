@@ -7,7 +7,7 @@ import { useRoute } from "@react-navigation/native";
 import { FundType } from "types";
 
 // components
-import { Header, Graph, Infos } from "components";
+import { Header, Graph, Infos, FundBreakdown } from "components";
 
 // styles
 import * as S from "./styles";
@@ -31,12 +31,18 @@ const AssetScreen = () => {
         backgroundColor="transparent"
       />
 
-      <Header hasBackButton screenTitle={fund.title} screenSubtitle="WFND" />
+      <Header
+        hasBackButton
+        screenTitle={fund.title}
+        screenSubtitle={fund.acronym}
+      />
 
       <S.Container>
         {data && <Graph data={data} />}
 
         <Infos data={data} />
+
+        <FundBreakdown data={data} />
       </S.Container>
     </GlobalWrapper>
   );
