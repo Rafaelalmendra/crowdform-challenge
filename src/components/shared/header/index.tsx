@@ -1,8 +1,8 @@
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 // components
+import { Button } from "../button";
 import { TextComponent } from "../text";
 
 // utils
@@ -26,7 +26,7 @@ type HeaderProps = {
 const Header = ({
   screenTitle,
   screenSubtitle,
-  hasBackButton = false,
+  hasBackButton,
   handleBackButton,
 }: HeaderProps) => {
   const { goBack } = useNavigation();
@@ -35,11 +35,13 @@ const Header = ({
     <S.Wrapper style={{ paddingTop: statusBarHeight }}>
       <S.HeaderContainer>
         {hasBackButton && (
-          <TouchableOpacity
+          <Button
+            variant="unstyled"
+            width={24}
             onPress={handleBackButton ? handleBackButton : goBack}
           >
             <ArrowLeft color={theme.colors.black} weight="bold" />
-          </TouchableOpacity>
+          </Button>
         )}
 
         {!!screenTitle && (
@@ -61,7 +63,7 @@ const Header = ({
           </View>
         )}
 
-        <View style={{ width: 20 }} />
+        <View style={{ width: 24 }} />
       </S.HeaderContainer>
     </S.Wrapper>
   );
