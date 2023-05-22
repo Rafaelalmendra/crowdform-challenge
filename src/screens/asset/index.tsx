@@ -1,8 +1,13 @@
+import { useState, useEffect } from "react";
+
 import { StatusBar } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
+// types
+import { FundType } from "types";
+
 // components
-import { Header, TextComponent } from "components";
+import { Header, Graph, Infos } from "components";
 
 // styles
 import * as S from "./styles";
@@ -11,6 +16,12 @@ import { GlobalWrapper } from "styles";
 const AssetScreen = () => {
   const route: any = useRoute();
   const { fund } = route.params;
+
+  const [data, setData] = useState<FundType>(fund);
+
+  useEffect(() => {
+    setData(fund);
+  }, [fund]);
 
   return (
     <GlobalWrapper>
@@ -23,7 +34,9 @@ const AssetScreen = () => {
       <Header hasBackButton screenTitle={fund.title} screenSubtitle="WFND" />
 
       <S.Container>
-        <TextComponent>Assets details</TextComponent>
+        {data && <Graph data={data} />}
+
+        <Infos data={data} />
       </S.Container>
     </GlobalWrapper>
   );

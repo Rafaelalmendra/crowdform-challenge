@@ -1,9 +1,11 @@
 import React from "react";
-import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // screens
 import { AssetScreen, HomeScreen } from "screens";
+
+// mocks
+import { fundsMock } from "mocks";
 
 // styles
 import theme from "styles/theme";
@@ -57,8 +59,9 @@ const BottomTabRoutes = () => {
       />
 
       <Screen
-        name="Trade"
+        name="Asset"
         component={AssetScreen}
+        initialParams={{ fund: fundsMock[0] }}
         options={{
           tabBarIcon: (props) => (
             <ArrowsLeftRight
