@@ -13,6 +13,8 @@ import {
   Infos,
   FundBreakdown,
   AssetPortfolio,
+  TextComponent,
+  Button,
 } from "components";
 
 // styles
@@ -51,7 +53,24 @@ const AssetScreen = () => {
         <FundBreakdown data={data} />
 
         <AssetPortfolio data={data} />
+
+        <S.MessageContainer>
+          <S.MessageContent>
+            <TextComponent fontSize={12} color="gray">
+              Please note that prices are for reference only and may vary at the
+              time of excecuting a buy or sell order.
+              {"\n"}
+              {"\n"}
+              The information provided is not investment advice, and should not
+              be used as a recommendation to buy or sell assets.
+            </TextComponent>
+          </S.MessageContent>
+        </S.MessageContainer>
       </S.Container>
+
+      <S.ButtonBuyContainer>
+        <Button>Buy</Button>
+      </S.ButtonBuyContainer>
     </GlobalWrapper>
   );
 };
