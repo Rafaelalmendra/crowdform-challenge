@@ -13,4 +13,5 @@ export type FundType = {
   vintageRange: string;
   aum: number;
   year: number;
+  acronym: string;
 };

@@ -23,6 +23,7 @@ const fundsMock = [
     vintageRange: "2019-2022",
     aum: 184.42,
     year: 2022,
+    acronym: "WFND",
   },
   {
     id: "2",
@@ -46,6 +47,7 @@ const fundsMock = [
     vintageRange: "2021-2023",
     aum: 430.88,
     year: 2023,
+    acronym: "SFND",
   },
   {
     id: "3",
@@ -69,6 +71,7 @@ const fundsMock = [
     vintageRange: "2020-2023",
     aum: 242.14,
     year: 2021,
+    acronym: "NFND",
   },
 ];
 
