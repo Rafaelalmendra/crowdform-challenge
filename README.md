@@ -2,13 +2,11 @@
 
 This repository is part of the challenge for the developer position at Crowdform. The aim of the project is to allow the user to enjoy a well-built and interactive finance application.
 
-<br />
 
 ## Apresentation
 
 https://github.com/Rafaelalmendra/crowdform-challenge/assets/70551452/464a1098-1fd6-43ff-a69d-f3869ccfdce6
 
-<br />
 
 ## Tecnologies
 
@@ -24,7 +22,6 @@ https://github.com/Rafaelalmendra/crowdform-challenge/assets/70551452/464a1098-1
 | Styled-Components    | `5.3.6 `  |
 | Phospor-React-Native | `1.1.2 `  |
 
-<br />
 
 ## Installation
 
@@ -38,6 +35,5 @@ $ yarn
 $ yarn start
 ```
 
-<br />
 
 Made with 💜 by Rafael Almendra 👋 [See my linkedin](https://www.linkedin.com/in/rafaelalmendraa/)
