@@ -11,7 +11,11 @@ export const Container = styled.View`
 export const InfosContainer = styled.View`
   width: 100%;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  margin-bottom: 10px;
+`;
+
+export const InfoItem = styled.View`
+  flex: 0.5;
+  gap: 6px;
 `;

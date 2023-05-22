@@ -93,6 +93,7 @@ const Graph = ({ data }: GraphProps) => {
           <S.GraphFooter>
             {mockTime.map((time, index) => (
               <Button
+                key={index}
                 width={45}
                 height={50}
                 fontSize={15}
