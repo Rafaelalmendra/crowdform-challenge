@@ -7,7 +7,13 @@ import { useRoute } from "@react-navigation/native";
 import { FundType } from "types";
 
 // components
-import { Header, Graph, Infos, FundBreakdown } from "components";
+import {
+  Header,
+  Graph,
+  Infos,
+  FundBreakdown,
+  AssetPortfolio,
+} from "components";
 
 // styles
 import * as S from "./styles";
@@ -43,6 +49,8 @@ const AssetScreen = () => {
         <Infos data={data} />
 
         <FundBreakdown data={data} />
+
+        <AssetPortfolio data={data} />
       </S.Container>
     </GlobalWrapper>
   );
